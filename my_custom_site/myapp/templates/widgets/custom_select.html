@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom select</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+<select name="{{ widget.name }}" {% if widget.attrs %} {% for name, value in widget.attrs.items %} {{ name }}="{{ value }}" {% endfor %} {% endif %}>
+    {% for group, options, index in widget.optgroups %}
+        {% if group %}
+        <optgroup label="{{ group }}">
+        {% endif %}
+        {% for option in options %}
+            <option value="{{ option.value }}"{% if option.selected %} selected{% endif %}>{{ option.label }}</option>
+        {% endfor %}
+        {% if group %}
+        </optgroup>
+        {% endif %}
+    {% endfor %}
+</select>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Context Processor</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+    <h1>{{ global_message }}</h1>
+<footer>
+    <p>© {{current_year}}</p>
+</footer>
+
+</body>
+</html>

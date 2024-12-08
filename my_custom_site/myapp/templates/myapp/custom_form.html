@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+    <h1>Custom Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Form with Validator</h2>
+        {{ form1.as_p }}
+
+        <h2>Form with Custom Select</h2>
+        {{ form2.as_p }}
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form for widget</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/css/styles.css' %}">
+</head>
+<body>
+<h1>My custom select</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p }}
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
